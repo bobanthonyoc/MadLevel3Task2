@@ -44,7 +44,7 @@ tools:context=".AddPortalFragment">
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnAddReminder"
+        android:id="@+id/btnAddportal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"

@@ -1,5 +1,6 @@
 package com.example.madlevel3task2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -7,8 +8,13 @@ import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_add_portal.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val PORTAL = "portal"
+    }
 
     private lateinit var navController: NavController
 
@@ -23,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.action_portalFragment_to_addPortalFragment)
         }
         fabToggler()
+
     }
 
     private fun fabToggler() {
