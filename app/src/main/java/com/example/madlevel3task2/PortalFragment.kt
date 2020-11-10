@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_portal.*
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class PortalFragment : Fragment() {
 
     private val portals = arrayListOf<Portal>()
     private val portalAdapter = PortalAdapter(portals)

@@ -2,21 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment">
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/portalFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.madlevel3task2.FirstFragment"
+        android:id="@+id/portalFragment"
+        android:name="com.example.madlevel3task2.PortalFragment"
         android:label="fragment_portal"
         tools:layout="@layout/fragment_portal" >
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            android:id="@+id/action_portalFragment_to_addPortalFragment"
+            app:destination="@id/addPortalFragment" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.madlevel3task2.SecondFragment"
+        android:id="@+id/addPortalFragment"
+        android:name="com.example.madlevel3task2.AddPortalFragment"
         android:label="fragment_add_portal"
         tools:layout="@layout/fragment_add_portal" />
 </navigation>
