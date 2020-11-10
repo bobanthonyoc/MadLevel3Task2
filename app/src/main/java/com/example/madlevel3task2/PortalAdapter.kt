@@ -1,13 +1,12 @@
 package com.example.madlevel3task2
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_portal.view.*
 
-class PortalAdapter (var context: Context, var arrayList: ArrayList<Portal>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PortalAdapter(var arrayList: ArrayList<Portal>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
