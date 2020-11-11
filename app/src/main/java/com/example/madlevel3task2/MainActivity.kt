@@ -1,14 +1,22 @@
 package com.example.madlevel3task2
 
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_add_portal.*
+import kotlinx.android.synthetic.main.item_portal.*
+import java.util.stream.DoubleStream.builder
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +38,21 @@ class MainActivity : AppCompatActivity() {
         }
         fabToggler()
 
+        /* val urllaunch = findViewById<View>(R.id.rvPortal) as Button
+        urllaunch.setOnClickListener(View.OnClickListener {
+            var url = portalUrl
+            val builder = CustomTabsIntent.Builder()
+
+            val anotherCustom = CustomTabsIntent.Builder().build()
+            val customTabsIntent = builder.build()
+            customTabsIntent.launchUrl(this, Uri.parse(url.toString()) )
+
+        }) */
     }
+
+
+
+
 
     private fun fabToggler() {
         navController.addOnDestinationChangedListener { _,       destination, _ ->
@@ -41,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -1,19 +1,22 @@
 package com.example.madlevel3task2
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_portal.view.*
 
-class PortalAdapter(private val arrayList: List<Portal>) : RecyclerView.Adapter<PortalAdapter.ViewHolder>() {
+class PortalAdapter(private val arrayList: List<Portal>, val clickListener: (Portal) -> Unit ) : RecyclerView.Adapter<PortalAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun databind(portal: Portal) {
+        fun databind(
+            portal: Portal,
+            clickListener: (Portal) -> Unit
+        ) {
             itemView.portalVak.text = portal.portalText
             itemView.portalUrl.text = portal.portalUrl
+            itemView.setOnClickListener{clickListener(portal)}
 
         }
     }
@@ -30,7 +33,8 @@ class PortalAdapter(private val arrayList: List<Portal>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.databind(arrayList[position])
+        holder.databind(arrayList[position], clickListener)
+
     }
 
 }
