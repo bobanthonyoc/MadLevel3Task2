@@ -48,11 +48,8 @@ class MainActivity : AppCompatActivity() {
             customTabsIntent.launchUrl(this, Uri.parse(url.toString()) )
 
         }) */
+
     }
-
-
-
-
 
     private fun fabToggler() {
         navController.addOnDestinationChangedListener { _,       destination, _ ->

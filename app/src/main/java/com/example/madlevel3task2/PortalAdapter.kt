@@ -16,6 +16,7 @@ class PortalAdapter(private val arrayList: List<Portal>, val clickListener: (Por
         ) {
             itemView.portalVak.text = portal.portalText
             itemView.portalUrl.text = portal.portalUrl
+            // whenever the View item is clicked, Android calls the click listener.
             itemView.setOnClickListener{clickListener(portal)}
 
         }
@@ -33,6 +34,7 @@ class PortalAdapter(private val arrayList: List<Portal>, val clickListener: (Por
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // the clickListener parameter has been added so that the viewholder will bind with the onBindViewHolder
         holder.databind(arrayList[position], clickListener)
 
     }

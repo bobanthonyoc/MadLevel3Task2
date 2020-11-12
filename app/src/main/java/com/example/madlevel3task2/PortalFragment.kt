@@ -1,33 +1,30 @@
 package com.example.madlevel3task2
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.madlevel3task2.MainActivity.Companion.PORTAL
 import kotlinx.android.synthetic.main.fragment_portal.*
-import kotlinx.android.synthetic.main.item_portal.*
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class PortalFragment : Fragment() {
-
+    // extend the adapter to the clicklistener using a lambda
     private val portals = arrayListOf<Portal>()
     private val portalAdapter = PortalAdapter(portals) {
+        // registred the clicklistener function to the adapter
             portal : Portal -> portalClicked(portal) }
 
     override fun onCreateView(
@@ -63,15 +60,15 @@ class PortalFragment : Fragment() {
 
     }
 
-    // added this code to enable the portalurl string to open a webpage
-
+    // created a method that handles the clicklistener.
+    // also added url browser logic to the function
     private fun portalClicked(portal: Portal) {
 
         val url = portal.portalUrl
-        val webpage: Uri = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
 
-            startActivity(intent)
+        startActivity(intent)
     }
+
 
 }
